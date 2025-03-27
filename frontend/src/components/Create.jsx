@@ -4,21 +4,20 @@ import axios from 'axios'
 import icon from "../images/icon.png"
 
 const Create = () => {
- const[title,setTitle]=useState([])
- const[description,setDescription]=useState([])
+ const[title,setTitle]=useState("")
+ const[description,setDescription]=useState("")
 
   const addTask = () => {
     axios.post(`${BACKEND_URL}/api/v1/task`,{title:title,description:description,completed:false})
     .then((result)=>{
         location.reload()
-        
     })
     .catch((err)=>console.log(err))
 }
 
   return (
       <div>
-        <h2 className='text-[#002765] flex items-center mb-[20px] font-extrabold'>
+        <h2 className='text-[#002765] text-[24px] flex items-center mb-[20px] font-extrabold'>
             Task Manager
              <img className='w-[30px] ml-[10px]' src={icon} alt="icon" />
       </h2>
@@ -27,7 +26,7 @@ const Create = () => {
       
       <button onClick={addTask} className='p-[15px] pl-[50px] pr-[50px] bg-[#ff5945] text-white font-[16px] cursor-pointer rounded-[40px]'>Add</button>
       </div>
-      <input type='text' onChange={(e)=>setDescription(e.target.value)} className='flex-1 p-[10px] w-full rounded-[30px] bg-[#edeef0]' placeholder='Description'/>
+      <input type='text' onChange={(e)=>setDescription(e.target.value)} className='flex-1 pl-[16px] p-[9px] w-full rounded-[30px] bg-[#edeef0]' placeholder='Description'/>
       </div>
   )
 }
