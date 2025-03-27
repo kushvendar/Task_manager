@@ -7,14 +7,16 @@ import {Tasklist}  from './components/Tasklist'
 function App() {
   return (
     <>
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Routes>
 
     <Route path="/task/:id" element={<Task/>} />
     <Route path="/tasks" element={<Tasklist/>} />
 
     </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <Tasklist/>
+    
     </>
   )
 }
